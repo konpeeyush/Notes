@@ -47,4 +47,24 @@ public class Main {
         }
         return count;
     }
+
+    public void insertFirst(int value) {
+        ListNode newNode = new ListNode(value);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void insertLast(int value) {
+        ListNode newNode = new ListNode(value);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        ListNode current = head;
+        while (null != current.next) {
+            current = current.next;
+        }
+        current.next = newNode;
+    }
 }
+
